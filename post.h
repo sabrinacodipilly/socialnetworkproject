@@ -56,26 +56,4 @@ private:
     int privLevel;
 };
 
-// class IncomingPost : public Post {
-// public:
-// 	//default constructor
-// 	IncomingPost();
-
-// 	//parameterized constructor
-//     IncomingPost(int messageId, int ownerId, string message, int likes, int privacyLevel, bool isPublic, string author);
-
-// 	//writes a message relating author_ to isPublic_
-// 	string toString();
-
-// 	//getter method - returns author_
-// 	string getAuthor();
-
-// 	//getter method - returns isPublic_
-// 	bool getIsPublic();
-
-// private:
-// 	string author_;
-//     bool isPublic_;
-// };
-
 #endif
