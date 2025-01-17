@@ -89,16 +89,18 @@ void SocialNetworkWindow::Display(){
             lines.push_back(line);
         }
 
-        ui->recentPostsLabel1->setText(QString::fromStdString(lines[0]));
-        ui->recentPostsLabel1->setWordWrap(true);
-        ui->recentPostsLabel2->setText(QString::fromStdString(lines[2]));
-        ui->recentPostsLabel2->setWordWrap(true);
-        ui->recentPostsLabel3->setText(QString::fromStdString(lines[4]));
-        ui->recentPostsLabel3->setWordWrap(true);
-        ui->recentPostsLabel4->setText(QString::fromStdString(lines[6]));
-        ui->recentPostsLabel4->setWordWrap(true);
-        ui->recentPostsLabel5->setText(QString::fromStdString(lines[8]));
-        ui->recentPostsLabel5->setWordWrap(true);
+        if (loggedInUser->getFriends().size() != 0) {
+            ui->recentPostsLabel1->setText(QString::fromStdString(lines[0]));
+            ui->recentPostsLabel1->setWordWrap(true);
+            ui->recentPostsLabel2->setText(QString::fromStdString(lines[2]));
+            ui->recentPostsLabel2->setWordWrap(true);
+            ui->recentPostsLabel3->setText(QString::fromStdString(lines[4]));
+            ui->recentPostsLabel3->setWordWrap(true);
+            ui->recentPostsLabel4->setText(QString::fromStdString(lines[6]));
+            ui->recentPostsLabel4->setWordWrap(true);
+            ui->recentPostsLabel5->setText(QString::fromStdString(lines[8]));
+            ui->recentPostsLabel5->setWordWrap(true);
+        }
 
         displayPosts(lines);
 
@@ -409,6 +411,7 @@ void SocialNetworkWindow::searchButtonClick() {
 
 void SocialNetworkWindow::createAccountPage() {
     ui->stackedWidget->setCurrentIndex(1);
+    ui->createAccountFailLabel->setText("");
 }
 
 void SocialNetworkWindow::createAccountButtonClick() {
@@ -423,12 +426,18 @@ void SocialNetworkWindow::createAccountButtonClick() {
 
     set<int> friends;
 
-    User* newUser = new User(network.numUsers(), newName, 0, newYear, newZip, friends);
-    network.addUser(newUser);
-    loggedInUser = network.getUser(newUser->getId());;
-    network.writeUsers("users.txt");
-    loggedIn = true;
-    userChoosePrivLevel();
+    if(network.getUserByName(newName)) {
+        ui->createAccountFailLabel->setText("Username already taken.");
+        ui->createName->setText("");
+        loggedIn = false;
+    } else{
+        User* newUser = new User(network.numUsers(), newName, 0, newYear, newZip, friends);
+        network.addUser(newUser);
+        loggedInUser = network.getUser(newUser->getId());;
+        network.writeUsers("users.txt");
+        loggedIn = true;
+        userChoosePrivLevel();
+    }
 }
 
 void SocialNetworkWindow::removeFriendButtonClick() {
