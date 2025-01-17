@@ -76,34 +76,3 @@ bool Post::getIsPublic() {
 void Post::addLike() {
     likes_++;
 }
-
-//IncomingPost class
-
-//default constructor
-// IncomingPost::IncomingPost() {
-
-// }
-
-// //parameterized constructor
-// IncomingPost::IncomingPost(int messageId, int ownerId, string message, int likes, int privacyLevel, bool isPublic, string author)
-//     : Post(messageId, ownerId, message, likes, privacyLevel), author_(author), isPublic_(isPublic) {
-// }
-
-// //returns "[author_] wrote[private]: [toString]"
-// string IncomingPost::toString() {
-// 	string priv = "";
-// 	if (!isPublic_) {
-// 		priv = " (private)";
-// 	}
-// 	return author_ + " wrote" + priv + ": " + Post::toString();
-// }
-
-// //returns author_
-// string IncomingPost::getAuthor() {
-// 	return author_;
-// }
-
-// //returns isPublic_
-// bool IncomingPost::getIsPublic() {
-// 	return isPublic_;
-// }
