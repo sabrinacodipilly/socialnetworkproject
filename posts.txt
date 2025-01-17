@@ -1,4 +1,4 @@
-408
+409
 0
 	The llama couldn't resist trying the lemonade.
 	132
@@ -717,7 +717,7 @@
 143
 	I am never at home on Sundays.
 	131
-	1
+	2
 	semi-private
 144
 	She wanted a pet platypus but ended up getting a duck and a ferret instead.
@@ -772,7 +772,7 @@
 154
 	I am counting my calories, yet I really want dessert.
 	71
-	2
+	3
 	public
 155
 	Blue sounded too cold at the time and yet it seemed to work for gin.
@@ -932,7 +932,7 @@
 186
 	Getting up at dawn is for the birds.
 	93
-	1
+	2
 	semi-private
 187
 	She had a difficult time owning up to her own crazy self.
@@ -2039,3 +2039,8 @@
 	0
 	0
 	private
+408
+	Ouch! My dog bit me :(
+	148
+	0
+	semi-private
