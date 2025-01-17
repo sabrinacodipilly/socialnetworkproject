@@ -511,7 +511,7 @@
      </palette>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QPushButton" name="loginButton">
@@ -671,6 +671,19 @@
       </property>
       <property name="text">
        <string>Create Account</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="createAccountFailLabel">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>390</y>
+        <width>211</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
       </property>
      </widget>
     </widget>
