@@ -174,7 +174,7 @@ void Network::writeUsers(char* fname) {
         // myfile << endl;
 
         if (friends.empty()) {
-            myfile << "\n\n";
+            myfile << "\n";
         } else {
             for (int fID : friends) {
                 myfile << fID << " ";
